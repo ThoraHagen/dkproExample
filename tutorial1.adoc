@@ -313,7 +313,9 @@ def main(input_folder, output_folder):
     """
     
     G = create_graph(input_folder + "/*")
-    # In case of circular drawing place '#' before every line of the remaining block
+    # If you want to create a circular graph instead of a regular one, 
+    # place '#' in front of every line of the following block and 
+    # erase the three '#' after 'Circular drawing', then run the script (again)
     pos = nx.spring_layout(G)
     nx.draw_networkx_labels(G, pos, font_size='8', font_color='r')
     nx.draw_networkx_edges(G, pos, alpha=0.1)
@@ -363,4 +365,6 @@ image:https://github.com/severinsimmler/dkproExample/blob/master/american_a.png?
 
 Discussion
 ++++++++++
-In this recipe we created a visualization of an author's social network using the output of the DARIAH-DKPro-Wrapper and two simple Python scripts. [Add some more]
+In this recipe we created a visualization of an author's social network using the output of the DARIAH-DKPro-Wrapper and two simple Python scripts to gain knowledge of the authors' relations. This is a good starting point for further research, as the existing 
+relations can now be investigated more closely. The edges could even hint at possible connections that have not yet been made.
+This kind of analysis therefore presents a great opportunity or groundwork, because this tool might structure the information differently then originally assumed. [Add some more]
